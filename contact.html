@@ -215,14 +215,17 @@
                     <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block">[Direct Channels]</span>
                     <h3 class="font-serif text-2xl font-bold">Fast-Track Communications</h3>
                     
-                    <div class="space-y-4 font-mono text-sm opacity-80">
+                    <div class="space-y-5 font-mono text-sm opacity-90">
                         <div>
-                            <p class="text-xs uppercase opacity-50 mb-1">Inquiries & New Business</p>
-                            <a href="mailto:hello@reigny.co" class="hover:text-lightAccent dark:hover:text-darkAccent transition-colors">hello@reigny.co</a>
+                            <p class="text-xs uppercase opacity-50 mb-1">Direct Executive Email</p>
+                            <a href="mailto:reighnhardwere2@gmail.com" class="text-base font-bold hover:text-lightAccent dark:hover:text-darkAccent transition-colors">reighnhardwere2@gmail.com</a>
                         </div>
                         <div>
-                            <p class="text-xs uppercase opacity-50 mb-1">Executive Direct</p>
-                            <a href="mailto:reinhard@reigny.co" class="hover:text-lightAccent dark:hover:text-darkAccent transition-colors">reinhard@reigny.co</a>
+                            <p class="text-xs uppercase opacity-50 mb-1">Instant Messaging</p>
+                            <a href="https://wa.me/254791846880?text=Hi%20Reigny,%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20brand." target="_blank" class="inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-mono text-xs uppercase tracking-wider hover:bg-emerald-500/20 transition-all">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.947 2.801.947h.005c3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.778-5.766zm9.969 5.766c0 5.502-4.478 9.974-9.974 9.974-1.748 0-3.385-.456-4.814-1.251l-5.212 1.365 1.393-5.084c-.902-1.488-1.423-3.23-1.423-5.004 0-5.502 4.478-9.974 9.974-9.974 5.502 0 10.056 4.472 10.056 9.974z"/></svg>
+                                Chat on WhatsApp (+254 791 846 880) &rarr;
+                            </a>
                         </div>
                         <div>
                             <p class="text-xs uppercase opacity-50 mb-1">Studio Coordinates</p>
@@ -282,7 +285,13 @@
                 <button id="close-chat" class="opacity-70 hover:opacity-100 transition-opacity"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
             </div>
             <div class="h-64 p-4 overflow-y-auto flex flex-col gap-4">
-                <div class="max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5">Tell us about your brand challenge. We are ready to help you scope it out.</div>
+                <div class="max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5 space-y-2">
+                    <p>Tell us about your brand challenge. We are ready to help you scope it out.</p>
+                    <a href="https://wa.me/254791846880?text=Hi%20Reigny,%20I%20would%20like%20to%20discuss%20a%20project%20for%20my%20brand." target="_blank" class="inline-flex items-center gap-2 mt-1 px-3 py-1.5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 font-mono text-[11px] font-bold hover:bg-emerald-500/25 transition-all">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.698c.969.585 1.961.947 2.801.947h.005c3.18 0 5.767-2.586 5.768-5.766 0-3.18-2.587-5.766-5.778-5.766zm9.969 5.766c0 5.502-4.478 9.974-9.974 9.974-1.748 0-3.385-.456-4.814-1.251l-5.212 1.365 1.393-5.084c-.902-1.488-1.423-3.23-1.423-5.004 0-5.502 4.478-9.974 9.974-9.974 5.502 0 10.056 4.472 10.056 9.974z"/></svg>
+                        Direct WhatsApp (+254 791 846 880) &rarr;
+                    </a>
+                </div>
             </div>
             <div class="p-3 border-t border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex gap-2">
                 <input type="text" placeholder="Type a message..." class="w-full bg-transparent outline-none font-sans text-sm text-lightText dark:text-darkText placeholder:text-black/30 dark:placeholder:text-white/30 px-2">
@@ -367,6 +376,15 @@
             const feedback = document.getElementById('form-feedback');
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
+                feedback.innerHTML = `
+                    <div class="p-6 rounded-2xl glass-panel border border-emerald-500/40 text-emerald-600 dark:text-emerald-400 space-y-3">
+                        <p class="font-serif text-xl font-bold">Brief Transmitted Successfully.</p>
+                        <p class="font-mono text-xs opacity-90 leading-relaxed">Your inquiry has been dispatched to <strong>reighnhardwere2@gmail.com</strong>. Our leadership will review and reply within 24 hours.</p>
+                        <a href="https://wa.me/254791846880?text=Hi%20Reigny,%20I%20just%20submitted%20a%20project%20brief%20on%20your%20website." target="_blank" class="inline-flex items-center gap-2 mt-2 px-4 py-2 rounded-full bg-emerald-500/20 text-emerald-600 dark:text-emerald-300 font-mono text-xs uppercase tracking-wider">
+                            Fast-track on WhatsApp now &rarr;
+                        </a>
+                    </div>
+                `;
                 feedback.classList.remove('hidden');
                 form.reset();
             });
