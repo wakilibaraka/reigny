@@ -139,12 +139,12 @@
                     A curated selection of projects spanning cinematic video, brand identity, UI/UX design, and social media campaigns.
                 </p>
                 <!-- Filter Buttons -->
-                <div class="flex flex-wrap gap-3 reveal reveal-delay-1">
-                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg border border-lightAccent dark:border-darkAccent transition-colors">ALL</button>
-                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Cinematic</button>
-                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Fashion</button>
-                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">UI/UX</button>
-                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Social</button>
+                <div class="flex flex-wrap gap-3 reveal reveal-delay-1" id="filter-controls">
+                    <button data-filter="all" class="filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg border border-lightAccent dark:border-darkAccent transition-colors">ALL</button>
+                    <button data-filter="cinematic" class="filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Cinematic</button>
+                    <button data-filter="fashion" class="filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Fashion</button>
+                    <button data-filter="uiux" class="filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">UI/UX</button>
+                    <button data-filter="social" class="filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Social</button>
                 </div>
             </div>
         </section>
@@ -154,7 +154,7 @@
             <div class="grid grid-cols-1 md:grid-cols-6 auto-rows-[300px] gap-4 md:gap-6">
 
                 <!-- Card 1: Neon Noir — col-span-3, row-span-2 -->
-                <article class="glass-panel rounded-xl md:col-span-3 md:row-span-2 overflow-hidden group relative flex flex-col justify-end p-8 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-scale">
+                <article data-category="cinematic" class="project-item glass-panel rounded-xl md:col-span-3 md:row-span-2 overflow-hidden group relative flex flex-col justify-end p-8 transition-all duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-scale">
                     <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200" alt="Neon Noir" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-40 group-hover:opacity-90 dark:group-hover:opacity-80 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                     <div class="relative z-10 text-white">
@@ -166,7 +166,7 @@
                 </article>
 
                 <!-- Card 2: Aura — col-span-3, row-span-1 -->
-                <article class="glass-panel rounded-xl md:col-span-3 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 md:p-8 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-1">
+                <article data-category="fashion" class="project-item glass-panel rounded-xl md:col-span-3 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 md:p-8 transition-all duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-1">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" alt="Aura" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 object-top scale-100 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                     <div class="relative z-10 text-white">
@@ -176,11 +176,11 @@
                         <h3 class="font-serif italic text-3xl md:text-4xl font-bold mb-1">Aura</h3>
                         <p class="font-mono text-sm opacity-90">1.2M <span class="opacity-60 text-xs uppercase tracking-wide">Impressions</span></p>
                     </div>
-                    <a href="#" class="absolute inset-0 z-20" aria-label="View Aura Project"></a>
+                    <a href="case-study.html" class="absolute inset-0 z-20" aria-label="View Aura Project"></a>
                 </article>
 
                 <!-- Card 3: Vortex — col-span-2, row-span-1 -->
-                <article class="glass-panel rounded-xl md:col-span-2 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal">
+                <article data-category="uiux" class="project-item glass-panel rounded-xl md:col-span-2 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-all duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal">
                     <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800" alt="Vortex" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                     <div class="relative z-10 text-white">
@@ -189,11 +189,11 @@
                     <div class="relative z-10 text-white mt-auto">
                         <h3 class="font-serif italic text-2xl md:text-3xl font-bold">Vortex</h3>
                     </div>
-                    <a href="#" class="absolute inset-0 z-20" aria-label="View Vortex Project"></a>
+                    <a href="case-study.html" class="absolute inset-0 z-20" aria-label="View Vortex Project"></a>
                 </article>
 
                 <!-- Card 4: Echo — col-span-1, row-span-1 -->
-                <article class="glass-panel rounded-xl md:col-span-1 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-1">
+                <article data-category="social" class="project-item glass-panel rounded-xl md:col-span-1 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-all duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-1">
                     <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800" alt="Echo" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                     <div class="relative z-10 text-white">
@@ -202,11 +202,11 @@
                     <div class="relative z-10 text-white mt-auto">
                         <h3 class="font-serif italic text-2xl md:text-3xl font-bold">Echo</h3>
                     </div>
-                    <a href="#" class="absolute inset-0 z-20" aria-label="View Echo Project"></a>
+                    <a href="case-study.html" class="absolute inset-0 z-20" aria-label="View Echo Project"></a>
                 </article>
 
                 <!-- Card 5: Lumina — col-span-2, row-span-1 -->
-                <article class="glass-panel rounded-xl md:col-span-2 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-2">
+                <article data-category="fashion" class="project-item glass-panel rounded-xl md:col-span-2 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-all duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-2">
                     <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=800" alt="Lumina" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                     <div class="relative z-10 text-white">
@@ -216,11 +216,11 @@
                         <h3 class="font-serif italic text-2xl md:text-3xl font-bold mb-1">Lumina</h3>
                         <p class="font-mono text-sm opacity-90">3× <span class="opacity-60 text-xs uppercase tracking-wide">Brand Recall</span></p>
                     </div>
-                    <a href="#" class="absolute inset-0 z-20" aria-label="View Lumina Project"></a>
+                    <a href="case-study.html" class="absolute inset-0 z-20" aria-label="View Lumina Project"></a>
                 </article>
 
                 <!-- Card 6: Zenith — col-span-4, row-span-1 -->
-                <article class="glass-panel rounded-xl md:col-span-4 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 md:p-8 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal">
+                <article data-category="cinematic" class="project-item glass-panel rounded-xl md:col-span-4 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 md:p-8 transition-all duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal">
                     <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200" alt="Zenith" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
                     <div class="relative z-10 text-white">
@@ -230,7 +230,7 @@
                         <h3 class="font-serif italic text-3xl md:text-4xl font-bold mb-1">Zenith</h3>
                         <p class="font-mono text-sm opacity-90">8M <span class="opacity-60 text-xs uppercase tracking-wide">Reach</span></p>
                     </div>
-                    <a href="#" class="absolute inset-0 z-20" aria-label="View Zenith Project"></a>
+                    <a href="case-study.html" class="absolute inset-0 z-20" aria-label="View Zenith Project"></a>
                 </article>
 
             </div>
@@ -362,6 +362,78 @@
                 if (menuOpen) { mobileMenu.classList.remove('hidden', 'opacity-0'); mobileMenu.classList.add('flex', 'opacity-100'); mobileBtn.innerText = 'CLOSE'; document.body.style.overflow = 'hidden'; }
                 else { mobileMenu.classList.remove('opacity-100'); mobileMenu.classList.add('opacity-0'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); }, 300); mobileBtn.innerText = 'MENU'; document.body.style.overflow = ''; }
             });
+
+            // Project Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    filterBtns.forEach(b => {
+                        b.className = 'filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors';
+                    });
+                    btn.className = 'filter-btn font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg border border-lightAccent dark:border-darkAccent transition-colors';
+
+                    projectCards.forEach(card => {
+                        const cat = card.getAttribute('data-category');
+                        if (filter === 'all' || cat === filter) {
+                            card.style.display = 'flex';
+                            setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 20);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'scale(0.95)';
+                            setTimeout(() => { card.style.display = 'none'; }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Live Chat Send Logic
+            const chatInput = document.querySelector('#chat-window input');
+            const chatSendBtn = document.querySelector('#chat-window button:last-of-type');
+            const chatMessages = document.querySelector('#chat-window .overflow-y-auto');
+
+            function sendChat() {
+                if (!chatInput || !chatMessages) return;
+                const text = chatInput.value.trim();
+                if (!text) return;
+                
+                const userMsg = document.createElement('div');
+                userMsg.className = 'max-w-[85%] self-end bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg rounded-2xl rounded-tr-sm p-3 font-sans text-sm shadow-sm';
+                userMsg.textContent = text;
+                chatMessages.appendChild(userMsg);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                setTimeout(() => {
+                    const reply = document.createElement('div');
+                    reply.className = 'max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5';
+                    reply.innerHTML = "Interested in commissioning a bespoke case study or creative campaign? Scope it out on our <a href='contact.html' class='underline text-lightAccent dark:text-darkAccent font-bold'>Initiation page</a>.";
+                    chatMessages.appendChild(reply);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 700);
+            }
+
+            if (chatSendBtn) chatSendBtn.addEventListener('click', sendChat);
+            if (chatInput) {
+                chatInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendChat();
+                    }
+                });
+            }
+
+            // Footer Form Handler
+            const footerForm = document.querySelector('footer form');
+            if (footerForm) {
+                footerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    footerForm.innerHTML = '<p class="font-mono text-sm text-lightAccent dark:text-darkAccent animate-pulse py-4 text-center w-full">[ Transmission Received // We will connect within 24 hours ]</p>';
+                });
+            }
         });
     </script>
 </body>

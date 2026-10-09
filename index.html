@@ -417,6 +417,51 @@
                 if (menuOpen) { mobileMenu.classList.remove('hidden', 'opacity-0'); mobileMenu.classList.add('flex', 'opacity-100'); mobileBtn.innerText = 'CLOSE'; document.body.style.overflow = 'hidden'; }
                 else { mobileMenu.classList.remove('opacity-100'); mobileMenu.classList.add('opacity-0'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); }, 300); mobileBtn.innerText = 'MENU'; document.body.style.overflow = ''; }
             });
+
+            // Live Chat Send Logic
+            const chatInput = document.querySelector('#chat-window input');
+            const chatSendBtn = document.querySelector('#chat-window button:last-of-type');
+            const chatMessages = document.querySelector('#chat-window .overflow-y-auto');
+
+            function sendChat() {
+                if (!chatInput || !chatMessages) return;
+                const text = chatInput.value.trim();
+                if (!text) return;
+                
+                const userMsg = document.createElement('div');
+                userMsg.className = 'max-w-[85%] self-end bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg rounded-2xl rounded-tr-sm p-3 font-sans text-sm shadow-sm';
+                userMsg.textContent = text;
+                chatMessages.appendChild(userMsg);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                setTimeout(() => {
+                    const reply = document.createElement('div');
+                    reply.className = 'max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5';
+                    reply.innerHTML = "Thank you for reaching out! You can also book an immediate alignment consultation or submit a detailed brief on our <a href='contact.html' class='underline text-lightAccent dark:text-darkAccent font-bold'>Project Initiation page</a>.";
+                    chatMessages.appendChild(reply);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 700);
+            }
+
+            if (chatSendBtn) chatSendBtn.addEventListener('click', sendChat);
+            if (chatInput) {
+                chatInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendChat();
+                    }
+                });
+            }
+
+            // Footer Form Handler
+            const footerForm = document.querySelector('footer form');
+            if (footerForm) {
+                footerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    footerForm.innerHTML = '<p class="font-mono text-sm text-lightAccent dark:text-darkAccent animate-pulse py-4 text-center w-full">[ Transmission Received // We will connect within 24 hours ]</p>';
+                });
+            }
         });
     </script>
 </body>

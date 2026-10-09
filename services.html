@@ -159,7 +159,7 @@
                         <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-lightAccent dark:bg-darkAccent flex-shrink-0"></span>Marketing Collateral</li>
                     </ul>
                     <div class="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
-                        <a href="#contact" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
+                        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
                     </div>
                 </article>
 
@@ -181,7 +181,7 @@
                         <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-lightAccent dark:bg-darkAccent flex-shrink-0"></span>Conversion Optimization</li>
                     </ul>
                     <div class="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
-                        <a href="#contact" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
+                        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
                     </div>
                 </article>
 
@@ -203,7 +203,7 @@
                         <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-lightAccent dark:bg-darkAccent flex-shrink-0"></span>Link Building</li>
                     </ul>
                     <div class="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
-                        <a href="#contact" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
+                        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
                     </div>
                 </article>
 
@@ -225,7 +225,7 @@
                         <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-lightAccent dark:bg-darkAccent flex-shrink-0"></span>Community Management</li>
                     </ul>
                     <div class="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
-                        <a href="#contact" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
+                        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
                     </div>
                 </article>
 
@@ -247,7 +247,7 @@
                         <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-lightAccent dark:bg-darkAccent flex-shrink-0"></span>Real-Time Optimization</li>
                     </ul>
                     <div class="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
-                        <a href="#contact" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
+                        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
                     </div>
                 </article>
 
@@ -269,7 +269,7 @@
                         <li class="flex items-center gap-2"><span class="w-1 h-1 rounded-full bg-lightAccent dark:bg-darkAccent flex-shrink-0"></span>Performance Optimized</li>
                     </ul>
                     <div class="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
-                        <a href="#contact" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
+                        <a href="contact.html" class="font-mono text-xs uppercase tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-all duration-300">Learn More &rarr;</a>
                     </div>
                 </article>
 
@@ -422,6 +422,51 @@
                 if (menuOpen) { mobileMenu.classList.remove('hidden', 'opacity-0'); mobileMenu.classList.add('flex', 'opacity-100'); mobileBtn.innerText = 'CLOSE'; document.body.style.overflow = 'hidden'; }
                 else { mobileMenu.classList.remove('opacity-100'); mobileMenu.classList.add('opacity-0'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); }, 300); mobileBtn.innerText = 'MENU'; document.body.style.overflow = ''; }
             });
+
+            // Live Chat Send Logic
+            const chatInput = document.querySelector('#chat-window input');
+            const chatSendBtn = document.querySelector('#chat-window button:last-of-type');
+            const chatMessages = document.querySelector('#chat-window .overflow-y-auto');
+
+            function sendChat() {
+                if (!chatInput || !chatMessages) return;
+                const text = chatInput.value.trim();
+                if (!text) return;
+                
+                const userMsg = document.createElement('div');
+                userMsg.className = 'max-w-[85%] self-end bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg rounded-2xl rounded-tr-sm p-3 font-sans text-sm shadow-sm';
+                userMsg.textContent = text;
+                chatMessages.appendChild(userMsg);
+                chatInput.value = '';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                setTimeout(() => {
+                    const reply = document.createElement('div');
+                    reply.className = 'max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5';
+                    reply.innerHTML = "Looking to explore any of our six service pillars? Submit your project details on our <a href='contact.html' class='underline text-lightAccent dark:text-darkAccent font-bold'>Initiation page</a>.";
+                    chatMessages.appendChild(reply);
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 700);
+            }
+
+            if (chatSendBtn) chatSendBtn.addEventListener('click', sendChat);
+            if (chatInput) {
+                chatInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        sendChat();
+                    }
+                });
+            }
+
+            // Footer Form Handler
+            const footerForm = document.querySelector('footer form');
+            if (footerForm) {
+                footerForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    footerForm.innerHTML = '<p class="font-mono text-sm text-lightAccent dark:text-darkAccent animate-pulse py-4 text-center w-full">[ Transmission Received // We will connect within 24 hours ]</p>';
+                });
+            }
         });
     </script>
 </body>
