@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reigny Creative Agency | Work & Gallery</title>
+    <meta name="description" content="Independent creative agency engineering visceral digital experiences, high-end media production, and narrative-driven brand identity. Nairobi, Kenya — Global Reach.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Reigny Creative Agency | Work & Gallery">
+    <meta property="og:description" content="We build brands people actually remember.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://reigny.co/work">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0D0D0C', darkText: '#F3F4F6', darkAccent: '#CCFF00',
+                        lightBg: '#F5F5F0', lightText: '#111111', lightAccent: '#0033FF',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 12s ease-in-out infinite 4s',
+                        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: { '0%, 100%': { transform: 'translateY(0) translateX(0)' }, '50%': { transform: 'translateY(-20px) translateX(10px)' } },
+                        pulseGlow: { '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 15px currentColor)' }, '50%': { opacity: .6, filter: 'drop-shadow(0 0 5px currentColor)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { transition: background-color 0.5s ease, color 0.5s ease; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .mesh-bg { position: fixed; inset: 0; z-index: -2; opacity: 0.4; }
+        html:not(.dark) .mesh-bg { background-image: radial-gradient(at 0% 0%, rgba(0,51,255,0.08) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(0,0,0,0.03) 0px, transparent 50%); }
+        html.dark .mesh-bg { background-image: radial-gradient(at 0% 0%, rgba(204,255,0,0.05) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(255,255,255,0.02) 0px, transparent 50%); }
+        .glass-panel { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.05); }
+        html:not(.dark) .glass-panel { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05); }
+        .marquee-container { display: flex; width: fit-content; animation: marqueeScroll 40s linear infinite; }
+        .marquee-container:hover { animation-play-state: paused; }
+        @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .text-outline-dark { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.15); }
+        .text-outline-light { color: transparent; -webkit-text-stroke: 1px rgba(0,0,0,0.15); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.2,0.8,0.2,1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .reveal-scale { opacity: 0; transform: scale(0.95); transition: all 1s cubic-bezier(0.2,0.8,0.2,1); }
+        .reveal-scale.active { opacity: 1; transform: scale(1); }
+        .blob-mask { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; animation: morphBlob 15s ease-in-out infinite alternate; overflow: hidden; transform: translateZ(0); }
+        @keyframes morphBlob { 0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; } 50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; } 100% { border-radius: 50% 40% 60% 50% / 40% 50% 60% 40%; } }
+        .theme-icon { transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), filter 0.3s ease; }
+        .theme-icon:hover { filter: drop-shadow(0 0 12px currentColor); transform: rotate(15deg) scale(1.1); }
+    </style>
+
+    <script>
+        /* Prevent FOUC — default LIGHT mode */
+        (function(){
+            var saved = localStorage.getItem('rcy_theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+</head>
+<body class="font-sans bg-lightBg dark:bg-darkBg text-lightText dark:text-darkText transition-colors duration-700 relative">
+
+    <div class="mesh-bg"></div>
+    <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-lightAccent/5 dark:bg-darkAccent/5 blur-[100px] animate-float"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-purple-500/5 dark:bg-emerald-500/5 blur-[120px] animate-float-delayed"></div>
+    </div>
+
+    <!-- NAV -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel py-4 px-6 md:px-12 transition-all duration-300">
+        <div class="max-w-[1800px] mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-mono tracking-[0.25em] text-sm uppercase font-bold text-lightText dark:text-white">REIGNY.</a>
+            <nav class="hidden md:flex items-center gap-10 font-mono text-[11px] tracking-widest uppercase">
+                <a href="index.html" class="opacity-60 hover:opacity-100 transition-opacity">Home</a>
+                <a href="work.html" class="text-lightAccent dark:text-darkAccent transition-colors">Work</a>
+                <a href="services.html" class="opacity-60 hover:opacity-100 transition-opacity">Services</a>
+                <a href="agency.html" class="opacity-60 hover:opacity-100 transition-opacity">Agency</a>
+                <a href="#contact" class="hover:text-lightAccent dark:hover:text-darkAccent transition-colors ml-4 flex items-center gap-2 group">
+                    Let's Talk <span class="w-1.5 h-1.5 rounded-full bg-lightAccent dark:bg-darkAccent animate-pulse block shadow-[0_0_8px_currentColor]"></span>
+                </a>
+                <button id="theme-toggle" type="button" class="ml-4 flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle Dark Mode">
+                    <svg id="icon-sun" class="theme-icon w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+                    <svg id="icon-moon" class="theme-icon w-5 h-5 text-darkAccent hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </nav>
+            <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden font-mono text-xs hover:text-lightAccent dark:hover:text-darkAccent z-50 relative">MENU</button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-lightBg/95 dark:bg-darkBg/95 backdrop-blur-xl z-40 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
+        <nav class="flex flex-col items-center gap-8 font-serif text-4xl">
+            <a href="index.html" class="hover:opacity-50 transition-opacity">Home</a>
+            <a href="work.html" class="text-lightAccent dark:text-darkAccent">Work</a>
+            <a href="services.html" class="hover:opacity-50 transition-opacity">Services</a>
+            <a href="agency.html" class="hover:opacity-50 transition-opacity">Agency</a>
+            <a href="#contact" class="mt-4 font-mono text-sm tracking-widest uppercase border border-black/20 dark:border-white/20 px-6 py-3 rounded-full">Let's Talk</a>
+        </nav>
+        <button id="mobile-theme-btn" class="mt-12 font-mono text-xs uppercase tracking-widest flex items-center gap-2 text-lightAccent dark:text-darkAccent">Toggle Theme</button>
+    </div>
+
+    <main>
+        <!-- PAGE HERO -->
+        <section class="pt-40 pb-16 px-6 md:px-12 max-w-[1600px] mx-auto">
+            <div class="reveal">
+                <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-6 block">[Selected Archives]</span>
+                <h1 class="font-serif leading-[0.9] tracking-tight mb-8" style="font-size: 10vw;">Our Work.</h1>
+                <p class="font-mono opacity-60 text-sm md:text-base max-w-2xl leading-relaxed mb-10">
+                    A curated selection of projects spanning cinematic video, brand identity, UI/UX design, and social media campaigns.
+                </p>
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-3 reveal reveal-delay-1">
+                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg border border-lightAccent dark:border-darkAccent transition-colors">ALL</button>
+                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Cinematic</button>
+                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Fashion</button>
+                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">UI/UX</button>
+                    <button class="font-mono text-xs uppercase tracking-widest px-5 py-2 rounded-full border border-black/20 dark:border-white/20 hover:border-lightAccent dark:hover:border-darkAccent hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Social</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FULL BENTO GRID -->
+        <section class="px-6 md:px-12 max-w-[1600px] mx-auto pb-24">
+            <div class="grid grid-cols-1 md:grid-cols-6 auto-rows-[300px] gap-4 md:gap-6">
+
+                <!-- Card 1: Neon Noir — col-span-3, row-span-2 -->
+                <article class="glass-panel rounded-xl md:col-span-3 md:row-span-2 overflow-hidden group relative flex flex-col justify-end p-8 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-scale">
+                    <img src="https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=1200" alt="Neon Noir" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-40 group-hover:opacity-90 dark:group-hover:opacity-80 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    <div class="relative z-10 text-white">
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-3 block bg-black/60 backdrop-blur-md px-3 py-1 w-fit rounded-full">[01 // Cinematic Video]</span>
+                        <h3 class="font-serif italic text-4xl md:text-5xl font-bold mb-4">Neon Noir</h3>
+                        <p class="font-sans text-3xl md:text-4xl font-light border-t border-white/20 pt-4 w-fit">+240% <span class="text-xs font-mono text-white/70 tracking-wide uppercase ml-2">Engagement</span></p>
+                    </div>
+                    <a href="#" class="absolute inset-0 z-20" aria-label="View Neon Noir Project"></a>
+                </article>
+
+                <!-- Card 2: Aura — col-span-3, row-span-1 -->
+                <article class="glass-panel rounded-xl md:col-span-3 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 md:p-8 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-1">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000" alt="Aura" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 object-top scale-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    <div class="relative z-10 text-white">
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block bg-black/60 backdrop-blur-md px-3 py-1 w-fit rounded-full">[02 // Fashion ID]</span>
+                    </div>
+                    <div class="relative z-10 text-white mt-auto">
+                        <h3 class="font-serif italic text-3xl md:text-4xl font-bold mb-1">Aura</h3>
+                        <p class="font-mono text-sm opacity-90">1.2M <span class="opacity-60 text-xs uppercase tracking-wide">Impressions</span></p>
+                    </div>
+                    <a href="#" class="absolute inset-0 z-20" aria-label="View Aura Project"></a>
+                </article>
+
+                <!-- Card 3: Vortex — col-span-2, row-span-1 -->
+                <article class="glass-panel rounded-xl md:col-span-2 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800" alt="Vortex" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    <div class="relative z-10 text-white">
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block bg-black/60 backdrop-blur-md px-3 py-1 w-fit rounded-full">[03 // UI/UX]</span>
+                    </div>
+                    <div class="relative z-10 text-white mt-auto">
+                        <h3 class="font-serif italic text-2xl md:text-3xl font-bold">Vortex</h3>
+                    </div>
+                    <a href="#" class="absolute inset-0 z-20" aria-label="View Vortex Project"></a>
+                </article>
+
+                <!-- Card 4: Echo — col-span-1, row-span-1 -->
+                <article class="glass-panel rounded-xl md:col-span-1 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-1">
+                    <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800" alt="Echo" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    <div class="relative z-10 text-white">
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block bg-black/60 backdrop-blur-md px-3 py-1 w-fit rounded-full">[04 // Social]</span>
+                    </div>
+                    <div class="relative z-10 text-white mt-auto">
+                        <h3 class="font-serif italic text-2xl md:text-3xl font-bold">Echo</h3>
+                    </div>
+                    <a href="#" class="absolute inset-0 z-20" aria-label="View Echo Project"></a>
+                </article>
+
+                <!-- Card 5: Lumina — col-span-2, row-span-1 -->
+                <article class="glass-panel rounded-xl md:col-span-2 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal reveal-delay-2">
+                    <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=800" alt="Lumina" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    <div class="relative z-10 text-white">
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block bg-black/60 backdrop-blur-md px-3 py-1 w-fit rounded-full">[05 // Brand Identity]</span>
+                    </div>
+                    <div class="relative z-10 text-white mt-auto">
+                        <h3 class="font-serif italic text-2xl md:text-3xl font-bold mb-1">Lumina</h3>
+                        <p class="font-mono text-sm opacity-90">3× <span class="opacity-60 text-xs uppercase tracking-wide">Brand Recall</span></p>
+                    </div>
+                    <a href="#" class="absolute inset-0 z-20" aria-label="View Lumina Project"></a>
+                </article>
+
+                <!-- Card 6: Zenith — col-span-4, row-span-1 -->
+                <article class="glass-panel rounded-xl md:col-span-4 md:row-span-1 overflow-hidden group relative flex flex-col justify-between p-6 md:p-8 transition-colors duration-500 hover:border-lightAccent/40 dark:hover:border-darkAccent/40 reveal">
+                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200" alt="Zenith" class="absolute inset-0 w-full h-full object-cover opacity-60 dark:opacity-30 group-hover:opacity-90 dark:group-hover:opacity-70 transition-all duration-700 filter grayscale group-hover:grayscale-0 scale-100 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+                    <div class="relative z-10 text-white">
+                        <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block bg-black/60 backdrop-blur-md px-3 py-1 w-fit rounded-full">[06 // Digital Campaign]</span>
+                    </div>
+                    <div class="relative z-10 text-white mt-auto">
+                        <h3 class="font-serif italic text-3xl md:text-4xl font-bold mb-1">Zenith</h3>
+                        <p class="font-mono text-sm opacity-90">8M <span class="opacity-60 text-xs uppercase tracking-wide">Reach</span></p>
+                    </div>
+                    <a href="#" class="absolute inset-0 z-20" aria-label="View Zenith Project"></a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- CTA STRIP -->
+        <section class="py-24 px-6 md:px-12 max-w-[1600px] mx-auto text-center reveal">
+            <h2 class="font-serif text-4xl md:text-6xl lg:text-7xl mb-6 tracking-tight">Have a project in mind?</h2>
+            <p class="font-mono opacity-60 text-sm md:text-base mb-10">Let's build something the world won't forget.</p>
+            <a href="#contact" class="inline-block font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(0,51,255,0.25)] dark:shadow-[0_0_20px_rgba(204,255,0,0.25)]">
+                Get a Quote &rarr;
+            </a>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="py-32 md:py-48 px-6 md:px-12 relative overflow-hidden glass-panel border-x-0 border-b-0 rounded-t-[3rem] mt-24">
+        <div class="max-w-5xl mx-auto text-center relative z-10 reveal">
+            <h2 class="font-serif text-5xl md:text-7xl lg:text-[7rem] leading-[1.05] mb-12 tracking-tight">
+                Make your brand <br>
+                <em class="text-lightAccent dark:text-darkAccent font-light not-italic text-outline-light dark:text-outline-dark" style="text-shadow:0 0 15px currentColor;">impossible</em> to ignore.
+            </h2>
+            <form class="flex flex-col sm:flex-row items-end justify-center max-w-2xl mx-auto group gap-4 sm:gap-0" action="services.html" method="GET">
+                <div class="w-full relative">
+                    <label for="project-email" class="sr-only">Enter your email</label>
+                    <input type="email" id="project-email" placeholder="Enter email to initiate project..." class="w-full bg-transparent border-b-2 border-black/20 dark:border-white/20 pb-4 text-center sm:text-left font-mono text-sm md:text-lg outline-none focus:border-lightAccent dark:focus:border-darkAccent transition-colors placeholder:text-black/40 dark:placeholder:text-white/40" required>
+                </div>
+                <button type="submit" aria-label="Submit" class="w-full sm:w-auto border-b-2 border-transparent sm:border-black/20 sm:dark:border-white/20 pb-4 px-6 opacity-60 group-focus-within:border-lightAccent dark:group-focus-within:border-darkAccent group-focus-within:text-lightAccent dark:group-focus-within:text-darkAccent hover:!text-lightAccent dark:hover:!text-darkAccent hover:opacity-100 transition-all flex justify-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="transform group-hover:translate-x-2 transition-transform duration-300"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </form>
+            <nav class="mt-32 pt-8 border-t border-black/10 dark:border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-[10px] opacity-50 uppercase tracking-widest w-full reveal reveal-delay-2">
+                <div class="flex gap-6">
+                    <a href="index.html" class="hover:text-lightAccent dark:hover:text-darkAccent hover:opacity-100 transition-all">Home</a>
+                    <a href="work.html" class="hover:text-lightAccent dark:hover:text-darkAccent hover:opacity-100 transition-all">Gallery</a>
+                    <a href="services.html" class="hover:text-lightAccent dark:hover:text-darkAccent hover:opacity-100 transition-all">Services</a>
+                    <a href="agency.html" class="hover:text-lightAccent dark:hover:text-darkAccent hover:opacity-100 transition-all">Agency</a>
+                </div>
+                <p>&copy; 2026 Reigny Creative Agency.</p>
+                <p>Nairobi, Kenya &mdash; Global Reach</p>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- CHAT WIDGET -->
+    <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex flex-col items-end">
+        <div id="chat-window" class="glass-panel w-80 md:w-96 rounded-2xl mb-4 overflow-hidden origin-bottom-right transition-all duration-300 opacity-0 scale-95 pointer-events-none translate-y-4">
+            <div class="bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg p-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white/20 dark:bg-black/20 flex items-center justify-center font-serif italic text-sm">R.</div>
+                    <div><p class="font-sans font-bold text-sm leading-none">Reigny Connect</p><p class="font-mono text-[10px] opacity-80 mt-1 uppercase tracking-widest">Online</p></div>
+                </div>
+                <button id="close-chat" class="opacity-70 hover:opacity-100 transition-opacity"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+            </div>
+            <div class="h-64 p-4 overflow-y-auto flex flex-col gap-4">
+                <div class="max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5">Welcome to Reigny. Are you looking to elevate your brand's digital presence today?</div>
+            </div>
+            <div class="p-3 border-t border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex gap-2">
+                <input type="text" placeholder="Type a message..." class="w-full bg-transparent outline-none font-sans text-sm text-lightText dark:text-darkText placeholder:text-black/30 dark:placeholder:text-white/30 px-2">
+                <button class="w-8 h-8 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+            </div>
+        </div>
+        <button id="chat-toggle-btn" class="w-14 h-14 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg flex items-center justify-center shadow-[0_0_20px_rgba(0,51,255,0.3)] dark:shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:scale-110 transition-transform z-[101] group relative">
+            <span class="absolute inset-0 rounded-full animate-ping opacity-20 bg-lightAccent dark:bg-darkAccent"></span>
+            <svg id="chat-icon-msg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute transition-all duration-300 transform scale-100 opacity-100"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <svg id="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute transition-all duration-300 transform scale-50 opacity-0"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const mobileThemeBtn = document.getElementById('mobile-theme-btn');
+            const iconSun = document.getElementById('icon-sun');
+            const iconMoon = document.getElementById('icon-moon');
+            function updateIcons() {
+                const dark = document.documentElement.classList.contains('dark');
+                iconSun.classList.toggle('hidden', dark);
+                iconMoon.classList.toggle('hidden', !dark);
+            }
+            updateIcons();
+            function toggleTheme() {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('rcy_theme', isDark ? 'dark' : 'light');
+                updateIcons();
+            }
+            themeToggleBtn.addEventListener('click', toggleTheme);
+            mobileThemeBtn.addEventListener('click', toggleTheme);
+
+            // Scroll Reveal
+            const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); observer.unobserve(e.target); } });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            revealEls.forEach(el => observer.observe(el));
+
+            // Chat
+            const chatToggleBtn = document.getElementById('chat-toggle-btn');
+            const closeChatBtn = document.getElementById('close-chat');
+            const chatWindow = document.getElementById('chat-window');
+            const chatIconMsg = document.getElementById('chat-icon-msg');
+            const chatIconClose = document.getElementById('chat-icon-close');
+            let chatOpen = false;
+            function toggleChat() {
+                chatOpen = !chatOpen;
+                chatWindow.classList.toggle('opacity-0', !chatOpen);
+                chatWindow.classList.toggle('scale-95', !chatOpen);
+                chatWindow.classList.toggle('pointer-events-none', !chatOpen);
+                chatWindow.classList.toggle('translate-y-4', !chatOpen);
+                chatIconMsg.style.opacity = chatOpen ? '0' : '1';
+                chatIconMsg.style.transform = chatOpen ? 'scale(0.5)' : 'scale(1)';
+                chatIconClose.style.opacity = chatOpen ? '1' : '0';
+                chatIconClose.style.transform = chatOpen ? 'scale(1)' : 'scale(0.5)';
+            }
+            chatToggleBtn.addEventListener('click', toggleChat);
+            closeChatBtn.addEventListener('click', toggleChat);
+
+            // Mobile Menu
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let menuOpen = false;
+            mobileBtn.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                if (menuOpen) { mobileMenu.classList.remove('hidden', 'opacity-0'); mobileMenu.classList.add('flex', 'opacity-100'); mobileBtn.innerText = 'CLOSE'; document.body.style.overflow = 'hidden'; }
+                else { mobileMenu.classList.remove('opacity-100'); mobileMenu.classList.add('opacity-0'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); }, 300); mobileBtn.innerText = 'MENU'; document.body.style.overflow = ''; }
+            });
+        });
+    </script>
+</body>
+</html>
