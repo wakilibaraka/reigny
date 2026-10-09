@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Project Initiation | Reigny Creative Agency</title>
+    <meta name="description" content="Initiate a project with Reigny Creative Agency. Tell us about your brand challenge, budget, and timeline. Nairobi, Kenya — Global Reach.">
+
+    <meta property="og:title" content="Contact & Project Initiation | Reigny Creative Agency">
+    <meta property="og:description" content="Let's build a brand people actually remember.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wakilibaraka.github.io/reigny/contact.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0D0D0C', darkText: '#F3F4F6', darkAccent: '#CCFF00',
+                        lightBg: '#F5F5F0', lightText: '#111111', lightAccent: '#0033FF',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    },
+                    animation: {
+                        'spin-slow': 'spin 12s linear infinite',
+                        'float': 'float 8s ease-in-out infinite',
+                        'float-delayed': 'float 12s ease-in-out infinite 4s',
+                        'pulse-glow': 'pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: { '0%, 100%': { transform: 'translateY(0) translateX(0)' }, '50%': { transform: 'translateY(-20px) translateX(10px)' } },
+                        pulseGlow: { '0%, 100%': { opacity: 1, filter: 'drop-shadow(0 0 15px currentColor)' }, '50%': { opacity: .6, filter: 'drop-shadow(0 0 5px currentColor)' } }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { transition: background-color 0.5s ease, color 0.5s ease; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .mesh-bg { position: fixed; inset: 0; z-index: -2; opacity: 0.4; }
+        html:not(.dark) .mesh-bg { background-image: radial-gradient(at 0% 0%, rgba(0,51,255,0.08) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(0,0,0,0.03) 0px, transparent 50%); }
+        html.dark .mesh-bg { background-image: radial-gradient(at 0% 0%, rgba(204,255,0,0.05) 0px, transparent 50%), radial-gradient(at 100% 100%, rgba(255,255,255,0.02) 0px, transparent 50%); }
+        .glass-panel { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.05); }
+        html:not(.dark) .glass-panel { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05); }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.2,0.8,0.2,1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.15s; }
+        .reveal-delay-2 { transition-delay: 0.3s; }
+        .theme-icon { transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), filter 0.3s ease; }
+        .theme-icon:hover { filter: drop-shadow(0 0 12px currentColor); transform: rotate(15deg) scale(1.1); }
+        .chip.active {
+            border-color: currentColor;
+            background-color: rgba(0,51,255,0.1);
+        }
+        html.dark .chip.active {
+            background-color: rgba(204,255,0,0.1);
+        }
+    </style>
+
+    <script>
+        (function(){
+            var saved = localStorage.getItem('rcy_theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        })();
+    </script>
+</head>
+<body class="font-sans bg-lightBg dark:bg-darkBg text-lightText dark:text-darkText transition-colors duration-700 relative">
+
+    <div class="mesh-bg"></div>
+    <div class="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-lightAccent/5 dark:bg-darkAccent/5 blur-[100px] animate-float"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] rounded-full bg-purple-500/5 dark:bg-emerald-500/5 blur-[120px] animate-float-delayed"></div>
+    </div>
+
+    <!-- NAV -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel py-4 px-6 md:px-12 transition-all duration-300">
+        <div class="max-w-[1800px] mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-mono tracking-[0.25em] text-sm uppercase font-bold text-lightText dark:text-white">REIGNY.</a>
+            <nav class="hidden md:flex items-center gap-8 font-mono text-[11px] tracking-widest uppercase">
+                <a href="index.html" class="opacity-60 hover:opacity-100 transition-opacity">Home</a>
+                <a href="work.html" class="opacity-60 hover:opacity-100 transition-opacity">Work</a>
+                <a href="services.html" class="opacity-60 hover:opacity-100 transition-opacity">Services</a>
+                <a href="agency.html" class="opacity-60 hover:opacity-100 transition-opacity">Agency</a>
+                <a href="journal.html" class="opacity-60 hover:opacity-100 transition-opacity">Journal</a>
+                <a href="careers.html" class="opacity-60 hover:opacity-100 transition-opacity">Careers</a>
+                <a href="contact.html" class="text-lightAccent dark:text-darkAccent transition-colors ml-2 flex items-center gap-2 group">
+                    Let's Talk <span class="w-1.5 h-1.5 rounded-full bg-lightAccent dark:bg-darkAccent animate-pulse block shadow-[0_0_8px_currentColor]"></span>
+                </a>
+                <button id="theme-toggle" type="button" class="ml-4 flex items-center justify-center p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5 transition-colors" aria-label="Toggle Dark Mode">
+                    <svg id="icon-sun" class="theme-icon w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
+                    <svg id="icon-moon" class="theme-icon w-5 h-5 text-darkAccent hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </nav>
+            <button id="mobile-menu-btn" aria-label="Menu" class="md:hidden font-mono text-xs hover:text-lightAccent dark:hover:text-darkAccent z-50 relative">MENU</button>
+        </div>
+    </header>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="fixed inset-0 bg-lightBg/95 dark:bg-darkBg/95 backdrop-blur-xl z-40 hidden flex-col justify-center items-center opacity-0 transition-opacity duration-300">
+        <nav class="flex flex-col items-center gap-6 font-serif text-3xl">
+            <a href="index.html" class="hover:opacity-50 transition-opacity">Home</a>
+            <a href="work.html" class="hover:opacity-50 transition-opacity">Work</a>
+            <a href="services.html" class="hover:opacity-50 transition-opacity">Services</a>
+            <a href="agency.html" class="hover:opacity-50 transition-opacity">Agency</a>
+            <a href="journal.html" class="hover:opacity-50 transition-opacity">Journal</a>
+            <a href="careers.html" class="hover:opacity-50 transition-opacity">Careers</a>
+            <a href="contact.html" class="text-lightAccent dark:text-darkAccent mt-2">Let's Talk</a>
+        </nav>
+        <button id="mobile-theme-btn" class="mt-8 font-mono text-xs uppercase tracking-widest flex items-center gap-2 text-lightAccent dark:text-darkAccent">Toggle Theme</button>
+    </div>
+
+    <main class="pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto relative z-10">
+        
+        <!-- HEADER -->
+        <header class="mb-20 max-w-4xl reveal">
+            <span class="font-mono text-[11px] uppercase tracking-widest text-lightAccent dark:text-darkAccent mb-4 block">[Project Initiation]</span>
+            <h1 class="font-serif text-[11vw] lg:text-[6.5vw] leading-[0.95] tracking-tight mb-8">
+                Tell us about your <br>
+                <span class="text-lightAccent dark:text-darkAccent italic font-light">next breakthrough.</span>
+            </h1>
+            <p class="font-mono opacity-60 text-base md:text-lg max-w-2xl leading-relaxed">
+                Whether you're redefining an existing titan or constructing a disruptive new presence from scratch, we partner with clients who refuse to blend in.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
+            
+            <!-- FORM COLUMN -->
+            <div class="lg:col-span-7 reveal">
+                <form id="initiation-form" class="space-y-12">
+                    
+                    <!-- 01 SERVICES SELECTION -->
+                    <div>
+                        <label class="font-mono text-xs uppercase tracking-widest text-lightAccent dark:text-darkAccent block mb-4">
+                            01 // Select Capabilities Needed
+                        </label>
+                        <div class="flex flex-wrap gap-3" id="service-chips">
+                            <button type="button" class="chip px-5 py-3 rounded-full border border-black/15 dark:border-white/15 font-mono text-xs uppercase tracking-wider transition-all hover:border-lightAccent dark:hover:border-darkAccent" data-value="brand">Brand Identity</button>
+                            <button type="button" class="chip px-5 py-3 rounded-full border border-black/15 dark:border-white/15 font-mono text-xs uppercase tracking-wider transition-all hover:border-lightAccent dark:hover:border-darkAccent" data-value="film">Cinematic Video</button>
+                            <button type="button" class="chip px-5 py-3 rounded-full border border-black/15 dark:border-white/15 font-mono text-xs uppercase tracking-wider transition-all hover:border-lightAccent dark:hover:border-darkAccent" data-value="web">Custom Web Dev</button>
+                            <button type="button" class="chip px-5 py-3 rounded-full border border-black/15 dark:border-white/15 font-mono text-xs uppercase tracking-wider transition-all hover:border-lightAccent dark:hover:border-darkAccent" data-value="seo">SEO & Performance</button>
+                            <button type="button" class="chip px-5 py-3 rounded-full border border-black/15 dark:border-white/15 font-mono text-xs uppercase tracking-wider transition-all hover:border-lightAccent dark:hover:border-darkAccent" data-value="social">Social & Media</button>
+                            <button type="button" class="chip px-5 py-3 rounded-full border border-black/15 dark:border-white/15 font-mono text-xs uppercase tracking-wider transition-all hover:border-lightAccent dark:hover:border-darkAccent" data-value="full">Full Ecosystem</button>
+                        </div>
+                    </div>
+
+                    <!-- 02 BUDGET -->
+                    <div>
+                        <label class="font-mono text-xs uppercase tracking-widest text-lightAccent dark:text-darkAccent block mb-4">
+                            02 // Anticipated Investment Range (USD)
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="budget-chips">
+                            <button type="button" class="chip p-4 rounded-xl border border-black/15 dark:border-white/15 font-mono text-xs text-center transition-all hover:border-lightAccent dark:hover:border-darkAccent">$5k – $15k</button>
+                            <button type="button" class="chip p-4 rounded-xl border border-black/15 dark:border-white/15 font-mono text-xs text-center transition-all hover:border-lightAccent dark:hover:border-darkAccent">$15k – $35k</button>
+                            <button type="button" class="chip p-4 rounded-xl border border-black/15 dark:border-white/15 font-mono text-xs text-center transition-all hover:border-lightAccent dark:hover:border-darkAccent">$35k – $75k</button>
+                            <button type="button" class="chip p-4 rounded-xl border border-black/15 dark:border-white/15 font-mono text-xs text-center transition-all hover:border-lightAccent dark:hover:border-darkAccent">$75k+</button>
+                        </div>
+                    </div>
+
+                    <!-- 03 CLIENT DETAILS -->
+                    <div class="space-y-6">
+                        <label class="font-mono text-xs uppercase tracking-widest text-lightAccent dark:text-darkAccent block">
+                            03 // Your Coordinates
+                        </label>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Your Name *" required class="w-full bg-transparent border-b-2 border-black/15 dark:border-white/15 pb-4 font-mono text-sm outline-none focus:border-lightAccent dark:focus:border-darkAccent transition-colors">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email Address *" required class="w-full bg-transparent border-b-2 border-black/15 dark:border-white/15 pb-4 font-mono text-sm outline-none focus:border-lightAccent dark:focus:border-darkAccent transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <input type="text" placeholder="Company / Brand" class="w-full bg-transparent border-b-2 border-black/15 dark:border-white/15 pb-4 font-mono text-sm outline-none focus:border-lightAccent dark:focus:border-darkAccent transition-colors">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Timeline / Target Launch" class="w-full bg-transparent border-b-2 border-black/15 dark:border-white/15 pb-4 font-mono text-sm outline-none focus:border-lightAccent dark:focus:border-darkAccent transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <textarea rows="4" placeholder="Briefly describe your challenge, goal, or creative ambitions..." class="w-full bg-transparent border-b-2 border-black/15 dark:border-white/15 pb-4 font-mono text-sm outline-none focus:border-lightAccent dark:focus:border-darkAccent transition-colors resize-none"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-4 group cursor-pointer border border-black/20 dark:border-white/20 rounded-full px-8 py-4 hover:border-lightAccent dark:hover:border-darkAccent hover:bg-lightAccent/5 dark:hover:bg-darkAccent/5 transition-all duration-300">
+                        <span class="font-mono text-xs uppercase tracking-widest group-hover:text-lightAccent dark:group-hover:text-darkAccent transition-colors">Send Project Brief &rarr;</span>
+                    </button>
+                    <p id="form-feedback" class="font-mono text-xs text-lightAccent dark:text-darkAccent hidden">Thank you. Your inquiry has been logged. Our leadership will review and reply within 24 hours.</p>
+                </form>
+            </div>
+
+            <!-- INFO / SIDEBAR COLUMN -->
+            <div class="lg:col-span-5 space-y-12 reveal reveal-delay-1">
+                
+                <div class="glass-panel rounded-2xl p-8 space-y-6">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block">[Direct Channels]</span>
+                    <h3 class="font-serif text-2xl font-bold">Fast-Track Communications</h3>
+                    
+                    <div class="space-y-4 font-mono text-sm opacity-80">
+                        <div>
+                            <p class="text-xs uppercase opacity-50 mb-1">Inquiries & New Business</p>
+                            <a href="mailto:hello@reigny.co" class="hover:text-lightAccent dark:hover:text-darkAccent transition-colors">hello@reigny.co</a>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase opacity-50 mb-1">Executive Direct</p>
+                            <a href="mailto:reinhard@reigny.co" class="hover:text-lightAccent dark:hover:text-darkAccent transition-colors">reinhard@reigny.co</a>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase opacity-50 mb-1">Studio Coordinates</p>
+                            <p>Westlands Commercial Hub<br>Nairobi, Kenya — East Africa</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 space-y-4">
+                    <span class="font-mono text-[10px] uppercase tracking-widest text-lightAccent dark:text-darkAccent block">[Working Protocol]</span>
+                    <h4 class="font-serif text-xl font-bold">What happens next?</h4>
+                    <ol class="font-mono text-xs opacity-70 space-y-3 leading-relaxed list-decimal list-inside">
+                        <li><strong>Audit:</strong> We inspect your existing digital footprint and competitor landscape.</li>
+                        <li><strong>Alignment Call:</strong> A 30-minute private consultation with Reinhard or Dr. Malach.</li>
+                        <li><strong>Proposal & Roadmap:</strong> Transparent deliverables, fixed sprints, and milestone pricing.</li>
+                    </ol>
+                </div>
+
+                <div class="glass-panel rounded-2xl p-8 flex items-center justify-between">
+                    <div>
+                        <p class="font-serif text-lg font-bold">Need instant answers?</p>
+                        <p class="font-mono text-xs opacity-60">Open our Live Assistant in the bottom corner.</p>
+                    </div>
+                    <button onclick="document.getElementById('chat-toggle-btn').click()" class="font-mono text-xs uppercase tracking-widest text-lightAccent dark:text-darkAccent underline">Launch &rarr;</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-24 px-6 md:px-12 glass-panel border-x-0 border-b-0 rounded-t-[3rem] mt-24">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 font-mono text-xs opacity-60 uppercase tracking-widest">
+            <div class="flex flex-wrap gap-8">
+                <a href="index.html" class="hover:opacity-100 transition-opacity">Home</a>
+                <a href="work.html" class="hover:opacity-100 transition-opacity">Work</a>
+                <a href="services.html" class="hover:opacity-100 transition-opacity">Services</a>
+                <a href="agency.html" class="hover:opacity-100 transition-opacity">Agency</a>
+                <a href="journal.html" class="hover:opacity-100 transition-opacity">Journal</a>
+                <a href="careers.html" class="hover:opacity-100 transition-opacity">Careers</a>
+                <a href="privacy.html" class="hover:opacity-100 transition-opacity">Privacy</a>
+            </div>
+            <p>&copy; 2026 Reigny Creative Agency. Nairobi &mdash; Global Reach</p>
+        </div>
+    </footer>
+
+    <!-- CHAT WIDGET -->
+    <div class="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] flex flex-col items-end">
+        <div id="chat-window" class="glass-panel w-80 md:w-96 rounded-2xl mb-4 overflow-hidden origin-bottom-right transition-all duration-300 opacity-0 scale-95 pointer-events-none translate-y-4">
+            <div class="bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg p-4 flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white/20 dark:bg-black/20 flex items-center justify-center font-serif italic text-sm">R.</div>
+                    <div><p class="font-sans font-bold text-sm leading-none">Reigny Connect</p><p class="font-mono text-[10px] opacity-80 mt-1 uppercase tracking-widest">Online</p></div>
+                </div>
+                <button id="close-chat" class="opacity-70 hover:opacity-100 transition-opacity"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+            </div>
+            <div class="h-64 p-4 overflow-y-auto flex flex-col gap-4">
+                <div class="max-w-[85%] bg-black/5 dark:bg-white/10 rounded-2xl rounded-tl-sm p-3 font-sans text-sm shadow-sm text-lightText dark:text-darkText border border-black/5 dark:border-white/5">Tell us about your brand challenge. We are ready to help you scope it out.</div>
+            </div>
+            <div class="p-3 border-t border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 flex gap-2">
+                <input type="text" placeholder="Type a message..." class="w-full bg-transparent outline-none font-sans text-sm text-lightText dark:text-darkText placeholder:text-black/30 dark:placeholder:text-white/30 px-2">
+                <button class="w-8 h-8 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg flex items-center justify-center hover:scale-105 transition-transform flex-shrink-0"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="ml-1"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></button>
+            </div>
+        </div>
+        <button id="chat-toggle-btn" class="w-14 h-14 rounded-full bg-lightAccent dark:bg-darkAccent text-white dark:text-darkBg flex items-center justify-center shadow-[0_0_20px_rgba(0,51,255,0.3)] dark:shadow-[0_0_20px_rgba(204,255,0,0.3)] hover:scale-110 transition-transform z-[101] group relative">
+            <span class="absolute inset-0 rounded-full animate-ping opacity-20 bg-lightAccent dark:bg-darkAccent"></span>
+            <svg id="chat-icon-msg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute transition-all duration-300 transform scale-100 opacity-100"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            <svg id="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="absolute transition-all duration-300 transform scale-50 opacity-0"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme Toggle
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const mobileThemeBtn = document.getElementById('mobile-theme-btn');
+            const iconSun = document.getElementById('icon-sun');
+            const iconMoon = document.getElementById('icon-moon');
+            function updateIcons() {
+                const dark = document.documentElement.classList.contains('dark');
+                iconSun.classList.toggle('hidden', dark);
+                iconMoon.classList.toggle('hidden', !dark);
+            }
+            updateIcons();
+            function toggleTheme() {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('rcy_theme', isDark ? 'dark' : 'light');
+                updateIcons();
+            }
+            themeToggleBtn.addEventListener('click', toggleTheme);
+            mobileThemeBtn.addEventListener('click', toggleTheme);
+
+            // Scroll Reveal
+            const revealEls = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('active'); observer.unobserve(e.target); } });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            revealEls.forEach(el => observer.observe(el));
+
+            // Chat
+            const chatToggleBtn = document.getElementById('chat-toggle-btn');
+            const closeChatBtn = document.getElementById('close-chat');
+            const chatWindow = document.getElementById('chat-window');
+            const chatIconMsg = document.getElementById('chat-icon-msg');
+            const chatIconClose = document.getElementById('chat-icon-close');
+            let chatOpen = false;
+            function toggleChat() {
+                chatOpen = !chatOpen;
+                chatWindow.classList.toggle('opacity-0', !chatOpen);
+                chatWindow.classList.toggle('scale-95', !chatOpen);
+                chatWindow.classList.toggle('pointer-events-none', !chatOpen);
+                chatWindow.classList.toggle('translate-y-4', !chatOpen);
+                chatIconMsg.style.opacity = chatOpen ? '0' : '1';
+                chatIconMsg.style.transform = chatOpen ? 'scale(0.5)' : 'scale(1)';
+                chatIconClose.style.opacity = chatOpen ? '1' : '0';
+                chatIconClose.style.transform = chatOpen ? 'scale(1)' : 'scale(0.5)';
+            }
+            chatToggleBtn.addEventListener('click', toggleChat);
+            closeChatBtn.addEventListener('click', toggleChat);
+
+            // Mobile Menu
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            let menuOpen = false;
+            mobileBtn.addEventListener('click', () => {
+                menuOpen = !menuOpen;
+                if (menuOpen) { mobileMenu.classList.remove('hidden', 'opacity-0'); mobileMenu.classList.add('flex', 'opacity-100'); mobileBtn.innerText = 'CLOSE'; document.body.style.overflow = 'hidden'; }
+                else { mobileMenu.classList.remove('opacity-100'); mobileMenu.classList.add('opacity-0'); setTimeout(() => { mobileMenu.classList.add('hidden'); mobileMenu.classList.remove('flex'); }, 300); mobileBtn.innerText = 'MENU'; document.body.style.overflow = ''; }
+            });
+
+            // Interactive chips
+            document.querySelectorAll('.chip').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    btn.classList.toggle('active');
+                });
+            });
+
+            // Form Submit feedback
+            const form = document.getElementById('initiation-form');
+            const feedback = document.getElementById('form-feedback');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                feedback.classList.remove('hidden');
+                form.reset();
+            });
+        });
+    </script>
+</body>
+</html>

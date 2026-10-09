@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy & Terms | Reigny Creative Agency</title>
+    <meta name="description" content="Privacy policy, data practices, and terms of engagement for Reigny Creative Agency clients and visitors.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,800;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: '#0D0D0C', darkText: '#F3F4F6', darkAccent: '#CCFF00',
+                        lightBg: '#F5F5F0', lightText: '#111111', lightAccent: '#0033FF',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { transition: background-color 0.5s ease, color 0.5s ease; -webkit-font-smoothing: antialiased; }
+        .glass-panel { background: rgba(255,255,255,0.03); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.05); }
+        html:not(.dark) .glass-panel { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.05); }
+    </style>
+    <script>
+        (function(){
+            var saved = localStorage.getItem('rcy_theme');
+            var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (saved === 'dark' || (!saved && prefersDark)) { document.documentElement.classList.add('dark'); }
+            else { document.documentElement.classList.remove('dark'); }
+        })();
+    </script>
+</head>
+<body class="font-sans bg-lightBg dark:bg-darkBg text-lightText dark:text-darkText transition-colors duration-700 relative">
+
+    <!-- NAV -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-panel py-4 px-6 md:px-12">
+        <div class="max-w-[1800px] mx-auto flex justify-between items-center">
+            <a href="index.html" class="font-mono tracking-[0.25em] text-sm uppercase font-bold text-lightText dark:text-white">REIGNY.</a>
+            <nav class="hidden md:flex items-center gap-8 font-mono text-[11px] tracking-widest uppercase">
+                <a href="index.html" class="opacity-60 hover:opacity-100 transition-opacity">Home</a>
+                <a href="work.html" class="opacity-60 hover:opacity-100 transition-opacity">Work</a>
+                <a href="services.html" class="opacity-60 hover:opacity-100 transition-opacity">Services</a>
+                <a href="agency.html" class="opacity-60 hover:opacity-100 transition-opacity">Agency</a>
+                <a href="journal.html" class="opacity-60 hover:opacity-100 transition-opacity">Journal</a>
+                <a href="careers.html" class="opacity-60 hover:opacity-100 transition-opacity">Careers</a>
+                <a href="contact.html" class="hover:text-lightAccent dark:hover:text-darkAccent transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-36 pb-24 px-6 md:px-12 max-w-4xl mx-auto font-mono text-sm leading-relaxed space-y-12">
+        <div>
+            <span class="text-xs uppercase tracking-widest text-lightAccent dark:text-darkAccent block mb-4">[Legal & Compliance]</span>
+            <h1 class="font-serif text-4xl md:text-6xl font-bold mb-4">Privacy Policy & Client Terms</h1>
+            <p class="opacity-60">Last updated: October 2026 &mdash; Nairobi, Kenya</p>
+        </div>
+
+        <section class="space-y-4">
+            <h2 class="font-serif text-2xl font-bold text-lightAccent dark:text-darkAccent">1. Information Governance</h2>
+            <p class="opacity-80">
+                Reigny Creative Agency collects only essential data necessary to deliver bespoke creative services, respond to project inquiries, and analyze aggregate digital performance. We do not sell, rent, or lease client data to third parties under any circumstances.
+            </p>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="font-serif text-2xl font-bold text-lightAccent dark:text-darkAccent">2. Intellectual Property Rights</h2>
+            <p class="opacity-80">
+                All bespoke brand identities, custom codebases, film assets, and art direction materials created for contracted clients transfer in full ownership upon complete settlement of invoices, subject to mutual agreement granting Reigny showcase and archival rights.
+            </p>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="font-serif text-2xl font-bold text-lightAccent dark:text-darkAccent">3. Confidentiality & Non-Disclosure</h2>
+            <p class="opacity-80">
+                We frequently execute preliminary NDAs prior to accessing unreleased product details, business metrics, or strategic roadmaps. Strict digital partitioning safeguards client collateral throughout every production lifecycle.
+            </p>
+        </section>
+
+        <section class="space-y-4">
+            <h2 class="font-serif text-2xl font-bold text-lightAccent dark:text-darkAccent">4. Governing Jurisdiction</h2>
+            <p class="opacity-80">
+                Unless explicitly specified within a bespoke master services agreement (MSA), contractual terms are interpreted in accordance with the laws of Kenya, alongside international commercial dispute arbitration standards.
+            </p>
+        </section>
+
+        <div class="pt-8 border-t border-black/10 dark:border-white/10 opacity-70">
+            Questions regarding our policies can be submitted to <a href="mailto:legal@reigny.co" class="underline text-lightAccent dark:text-darkAccent">legal@reigny.co</a>.
+        </div>
+    </main>
+
+    <footer class="py-12 px-6 border-t border-black/10 dark:border-white/10 text-center font-mono text-xs opacity-60">
+        &copy; 2026 Reigny Creative Agency. All rights reserved.
+    </footer>
+
+</body>
+</html>
